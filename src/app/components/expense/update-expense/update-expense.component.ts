@@ -10,6 +10,7 @@ import { ExpenseService } from '../../../Services/expense/expense.service';
   styleUrls: ['./update-expense.component.scss']
 })
 export class UpdateExpenseComponent implements OnInit {
+ 
   expenseForm!: FormGroup;
   listOfCategory: string[] = [
     "Education",

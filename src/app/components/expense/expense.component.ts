@@ -11,6 +11,7 @@ import { ExpenseService } from '../../Services/expense/expense.service';
   styleUrls: ['./expense.component.scss'],
 })
 export class ExpenseComponent implements OnInit {
+ 
   expenseForm!: FormGroup;
   listOfCategory: string[] = [
     "Education", "Groceries", "Health", "Subscription",
@@ -109,4 +110,5 @@ export class ExpenseComponent implements OnInit {
       }
     );
   }
+
 }

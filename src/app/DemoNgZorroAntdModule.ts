@@ -87,7 +87,6 @@ import { HttpClientModule } from '@angular/common/http';
     NzTableModule
   ],
   providers:[{provide:NZ_I18N,useValue:en_US}],
- 
   exports:[
    NzAffixModule,
    NzAlertModule,
@@ -157,12 +156,9 @@ import { HttpClientModule } from '@angular/common/http';
   ]
 })
 export class AppModule { }
-
 @NgModule({
-
 })
 export class DemoNgZorroAntdModule{}
-
 @Component({
   selector: 'app-root',
   standalone: true,

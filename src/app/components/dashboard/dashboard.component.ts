@@ -18,6 +18,7 @@ interface ChartData {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
+ 
   stats: any = {};
   incomes: ChartData[] = [];
   expenses: ChartData[] = [];
@@ -242,4 +243,5 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       }
     });
   }
+  
 }

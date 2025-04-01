@@ -17,6 +17,7 @@ export class ExpenseComponent implements OnInit {
     "Education", "Groceries", "Health", "Subscription",
     "Takeaways", "Clothing", "Travelling", "Other"
   ];
+ 
   expenses: any[] = []; // Typed as array for clarity
   id?: number; // Optional since it’s not always set
 

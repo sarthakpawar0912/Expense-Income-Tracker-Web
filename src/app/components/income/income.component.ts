@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./income.component.scss']  // Correct the styleUrls property
 })
 export class IncomeComponent implements OnInit {
+
   incomeForm!: FormGroup;
   listOfCategory: string[] = [
     "Salary",
@@ -24,7 +25,6 @@ export class IncomeComponent implements OnInit {
   ];
   incomes: any;
 
-  
   constructor(
     private fb: FormBuilder,
     private message: NzMessageService,
@@ -43,13 +43,12 @@ export class IncomeComponent implements OnInit {
     });
   }
 
-
-getAllIncomes(){
-  this.incomeService.getAllIncomes().subscribe(res=>{
-    this.incomes=res;
-    console.log(this.incomes);
-  })
-}
+  getAllIncomes(){
+    this.incomeService.getAllIncomes().subscribe(res=>{
+      this.incomes=res;
+      console.log(this.incomes);
+    })
+  }
   onSubmit() {
     this.incomeService.postIncome(this.incomeForm.value).subscribe(
       res=> {
@@ -61,8 +60,6 @@ getAllIncomes(){
           }
     );
   } 
-
-
   
   deleteIncome(id: number) {
     this.incomeService.deleteIncome(id).subscribe(
@@ -76,7 +73,5 @@ getAllIncomes(){
     );
 
   }
-
-
 
 }

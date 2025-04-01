@@ -1,0 +1,49 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a routerLink="/dashboard" style="display: flex; align-items: center; gap: 12px;">
+        <div style="display: flex; align-items: center;">
+          <span nz-icon nzType="dollar-circle" nzTheme="fill" style="font-size: 32px; color: #52c41a; filter: drop-shadow(0 0 2px rgba(82, 196, 26, 0.3));"></span>
+          <span nz-icon nzType="line-chart" nzTheme="outline" style="font-size: 28px; color: #1890ff; margin-left: -10px; filter: drop-shadow(0 0 2px rgba(24, 144, 255, 0.3));"></span>
+        </div>
+        <h1 class="app-title" style="margin: 0; background: linear-gradient(120deg, #52c41a, #1890ff); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 600; text-shadow: 0px 0px 10px rgba(255,255,255,0.1);">Personal Finance Tracker</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item routerLink="/dashboard">
+        <span nz-icon nzType="dashboard"></span>
+        <span>Dashboard</span>
+      </li>
+      <li nz-menu-item routerLink="/income">
+        <span nz-icon nzType="fund"></span>
+        <span>Income</span>
+      </li>
+      <li nz-menu-item routerLink="/expense">
+        <span nz-icon nzType="fall"></span>
+        <span>Expense</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          ></span>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

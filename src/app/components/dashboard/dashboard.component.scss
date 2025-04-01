@@ -1,0 +1,214 @@
+:host {
+  display: block;
+  height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Increased from 10px */
+  padding: 12px; /* Increased from 10px */
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  box-sizing: border-box;
+}
+
+.stats-row {
+  display: flex;
+  gap: 12px; /* Increased from 10px */
+  height: 70px; /* Increased from 60px */
+}
+
+.stat-card {
+  flex: 1;
+  padding: 10px; /* Increased from 8px */
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  font-size: 18px; /* Increased from 16px */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+nz-card.small-stat-card,
+nz-card.history-card {
+  display: flex;
+  flex-direction: column;
+}
+
+nz-card.small-stat-card ::ng-deep .ant-card-head,
+nz-card.history-card ::ng-deep .ant-card-head {
+  text-align: center;
+  padding: 0;
+  min-height: 32px; /* Increased from 28px */
+}
+
+nz-card.small-stat-card ::ng-deep .ant-card-head-title,
+nz-card.history-card ::ng-deep .ant-card-head-title {
+  padding: 8px 0; /* Increased from 6px */
+  font-size: 16px; /* Increased from 14px */
+}
+
+.content-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Increased from 10px */
+  height: calc(100% - 82px); /* Adjusted for stats-row (70px + 12px gap) */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.stats-container {
+  display: flex;
+  gap: 12px; /* Increased from 10px */
+  height: 120px; /* Increased from 100px */
+  align-items: stretch;
+}
+
+.small-stat-card {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 6px; /* Increased from 5px */
+}
+
+.stats-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  font-size: 16px; /* Increased from default */
+}
+
+.history-card {
+  flex: 1.5;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 6px; /* Increased from 5px */
+}
+
+.history-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px; /* Increased from 6px */
+}
+
+.history-item {
+  flex: 1;
+  padding: 4px; /* Increased from 3px */
+  font-size: 16px; /* Increased from 14px */
+  text-align: center;
+}
+
+.charts-container {
+  display: flex;
+  gap: 12px; /* Increased from 10px */
+  height: 550px; /* Increased from 500px and shifted downward implicitly */
+  overflow: hidden; /* Prevent scrolling */
+  margin-top: 10px; /* Added to shift charts downward */
+}
+
+.chart-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chart-wrapper {
+  flex: 1;
+  padding: 12px; /* Increased from 10px */
+  position: relative;
+  height: 100%;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+span[style*="color: green"] {
+  color: #52c41a !important;
+  font-size: 18px; /* Added size increase */
+}
+
+span[style*="color: red"] {
+  color: #ff4d4f !important;
+  font-size: 18px; /* Added size increase */
+}
+
+span[style*="color: slateblue"] {
+  font-size: 18px; /* Added size increase */
+}
+
+@media (max-width: 1024px) {
+  .stats-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .charts-container {
+    flex-direction: column;
+    height: 750px; /* Increased from 700px */
+    margin-top: 8px; /* Adjusted for smaller screens */
+  }
+
+  .chart-card {
+    height: 375px; /* Increased from 350px */
+  }
+
+  .chart-wrapper {
+    height: 100%;
+  }
+
+  .history-container {
+    flex-direction: column;
+  }
+
+  .stats-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-row {
+    flex-direction: column;
+    height: auto;
+    gap: 10px; /* Increased from 8px */
+  }
+
+  .stat-card {
+    padding: 10px; /* Increased from 8px */
+    font-size: 16px; /* Increased from 14px */
+  }
+
+  .stats-container {
+    gap: 10px; /* Increased from 8px */
+  }
+
+  .small-stat-card,
+  .history-card {
+    padding: 5px; /* Increased from 4px */
+  }
+
+  .charts-container {
+    height: 650px; /* Increased from 600px */
+    margin-top: 6px; /* Adjusted for smaller screens */
+  }
+
+  .chart-card {
+    height: 325px; /* Increased from 300px */
+  }
+}

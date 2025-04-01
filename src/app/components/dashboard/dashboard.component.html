@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+  <div class="stats-row">
+    <div class="stat-card">
+      Balance: <span style="color: slateblue">₹{{ stats?.balance || 0 }}</span>
+    </div>
+    <div class="stat-card">
+      Total Income: <span style="color: green">₹{{ stats?.income || 0 }}</span>
+    </div>
+    <div class="stat-card">
+      Total Expense: <span style="color: red">₹{{ stats?.expense || 0 }}</span>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="stats-container">
+      <nz-card class="small-stat-card" nzType="inner" nzTitle="Income Stats">
+        <div class="stats-content">
+          <div>Min: ₹{{ stats?.minIncome || 0 }}</div>
+          <div>Max: ₹{{ stats?.maxIncome || 0 }}</div>
+        </div>
+      </nz-card>
+      
+      <nz-card class="history-card" nzType="inner" nzTitle="Recent History">
+        <div class="history-container">
+          <div class="history-item">
+            <span style="color: green">
+              ₹{{ stats?.latestIncome?.amount || 0 }} {{ stats?.latestIncome?.title || 'N/A' }}
+            </span>
+          </div>
+          <div class="history-item">
+            <span style="color: red">
+              ₹{{ stats?.latestExpense?.amount || 0 }} {{ stats?.latestExpense?.title || 'N/A' }}
+            </span>
+          </div>
+        </div>
+      </nz-card>
+      
+      <nz-card class="small-stat-card" nzType="inner" nzTitle="Expense Stats">
+        <div class="stats-content">
+          <div>Min: ₹{{ stats?.minExpense || 0 }}</div>
+          <div>Max: ₹{{ stats?.maxExpense || 0 }}</div>
+        </div>
+      </nz-card>
+    </div>
+
+    <div class="charts-container">
+      <nz-card class="chart-card" nzType="inner" nzTitle="Income Chart">
+        <div class="chart-wrapper">
+          <canvas #incomeLineChartRef></canvas>
+        </div>
+      </nz-card>
+      <nz-card class="chart-card" nzType="inner" nzTitle="Expense Chart">
+        <div class="chart-wrapper">
+          <canvas #expenseLineChartRef></canvas>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

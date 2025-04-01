@@ -1,0 +1,83 @@
+/* expense.component.scss */
+:host {
+  display: block;
+}
+
+.custom-form {
+  .ant-form-item {
+      margin-bottom: 16px;
+  }
+
+  button {
+      margin-top: 16px;
+  }
+}
+
+nz-card {
+  .expense-scroll-container {
+      max-height: 400px; /* Adjust this value based on your needs */
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 8px;
+      
+      /* Custom scrollbar styling */
+      &::-webkit-scrollbar {
+          width: 8px;
+      }
+      
+      &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+      }
+  }
+
+  .expense-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      
+      &:last-child {
+          border-bottom: none;
+      }
+
+      span[nz-icon] {
+          margin-right: 8px;
+      }
+  }
+
+  .action-buttons {
+      text-align: right;
+      
+      span[nz-icon] {
+          font-size: 16px;
+          transition: all 0.3s;
+          
+          &:hover {
+              transform: scale(1.2);
+          }
+      }
+  }
+}
+
+nz-pagination {
+  .ant-pagination-item {
+      margin: 0 4px;
+  }
+  
+  .ant-pagination-item-active {
+      background: #1890ff;
+      border-color: #1890ff;
+      
+      a {
+          color: #fff;
+      }
+  }
+}

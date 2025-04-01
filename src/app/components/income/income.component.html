@@ -4,6 +4,7 @@
     <div nz-col nzFlex="2">
       <nz-card nzType="inner" [nzTitle]="'Post New Income'" style="margin-top: 16px;">
         <form nz-form [formGroup]="incomeForm" (ngSubmit)="onSubmit()" class="custom-form">
+        
           <nz-form-item nz-col nzSpan="23">
             <nz-form-control nzErrorTip="Please input the title">
               <input type="text" nz-input formControlName="title" placeholder="Enter the title">
